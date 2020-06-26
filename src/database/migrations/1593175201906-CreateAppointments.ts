@@ -16,7 +16,7 @@ export default class CreateAppointments1593175201906
           },
           {
             name: 'provider',
-            type: 'varchar',
+            type: 'uuid',
           },
           {
             name: 'date',
