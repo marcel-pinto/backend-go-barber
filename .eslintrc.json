@@ -25,12 +25,25 @@
   "rules": {
     "class-methods-use-this": "off",
     "camelcase": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
+    ],
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
         "argsIgnorePattern": "_"
       }
-    ]
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
