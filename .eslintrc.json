@@ -18,10 +18,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
     "class-methods-use-this": "off",
     "camelcase": "off",
@@ -30,9 +27,7 @@
       "error",
       {
         "selector": "interface",
-        "format": [
-          "PascalCase"
-        ],
+        "format": ["PascalCase"],
         "custom": {
           "regex": "^I[A-Z]",
           "match": true
@@ -42,7 +37,8 @@
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
-        "argsIgnorePattern": "_"
+        "argsIgnorePattern": "_",
+        "varsIgnorePattern": "_"
       }
     ],
     "import/extensions": [

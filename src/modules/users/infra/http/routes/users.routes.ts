@@ -20,10 +20,9 @@ usersRouter.post('/', async (request, response) => {
     email,
     password,
   });
+  const { password: _, ...responseUser } = user;
 
-  delete user.password;
-
-  return response.json(user);
+  return response.json(responseUser);
 });
 
 usersRouter.patch(
@@ -37,9 +36,9 @@ usersRouter.patch(
       avatarFilename: request.file.filename,
     });
 
-    delete user.password;
+    const { password: _, ...responseUser } = user;
 
-    return response.json(user);
+    return response.json(responseUser);
   },
 );
 

@@ -22,7 +22,7 @@ export default class AuthenticateUserService {
   constructor(
     @inject('UserRepository')
     private userRepository: IUserRepository,
-  ) { }
+  ) {}
 
   public async execute({ email, password }: IRequest): Promise<IResponse> {
     const user = await this.userRepository.findByEmail(email);
