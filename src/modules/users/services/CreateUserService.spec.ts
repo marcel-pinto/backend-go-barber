@@ -6,11 +6,11 @@ import FakeUserRepository from '../repositories/fakes/FakeUserRepository';
 import CreateUserService from './CreateUserService';
 
 describe('CreateUser', () => {
-  it('should be able to create a new appointment', async () => {
+  it('should be able to create a new user', async () => {
     const fakeHashProvider = new FakeHashProvider();
-    const fakeAppointmentsRepository = new FakeUserRepository();
+    const fakeUserRepository = new FakeUserRepository();
     const createUserService = new CreateUserService(
-      fakeAppointmentsRepository,
+      fakeUserRepository,
       fakeHashProvider,
     );
 
