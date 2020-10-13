@@ -5,16 +5,24 @@ import IUserTokenRepository from '../IUserTokensRepository';
 export default class FakeUserTokensRepository implements IUserTokenRepository {
   private userTokens: UserToken[] = [];
 
-  public async generate(user_Id: string): Promise<UserToken> {
+  public async generate(user_id: string): Promise<UserToken> {
     const userToken = new UserToken();
 
     Object.assign(userToken, {
       id: uuid(),
       token: uuid(),
-      user_Id,
+      user_id,
     });
 
     this.userTokens.push(userToken);
+
+    return userToken;
+  }
+
+  public async findByToken(token: string): Promise<UserToken | undefined> {
+    const userToken = this.userTokens.find(
+      storedToken => storedToken.token === token,
+    );
 
     return userToken;
   }
