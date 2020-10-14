@@ -38,9 +38,9 @@ export default class CreateUserTokens1602671770855
         foreignKeys: [
           {
             name: 'TokenUser',
-            columnNames: ['user_id'],
             referencedTableName: 'users',
             referencedColumnNames: ['id'],
+            columnNames: ['user_id'],
             onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
           },
