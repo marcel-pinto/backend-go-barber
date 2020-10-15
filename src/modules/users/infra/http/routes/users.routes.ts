@@ -3,7 +3,7 @@ import multer from 'multer';
 
 import uploadConfig from '@config/upload';
 import UsersController from '../controllers/UsersController';
-import UserAvatarController from '../controllers/UserAvatarControler';
+import UserAvatarController from '../controllers/UserAvatarController';
 import ensureAuthentication from '../middlewares/ensureAuthentication';
 
 const usersRouter = Router();
