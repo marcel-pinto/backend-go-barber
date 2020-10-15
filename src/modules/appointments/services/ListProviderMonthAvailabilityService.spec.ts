@@ -13,8 +13,9 @@ describe('ListProviderMonthAvailability', () => {
     );
   });
 
-  it('should be able to show list the providers', async () => {
+  it('should be able to show list the month availability from provider', async () => {
     const appointmentsInDay20 = [];
+
     for (let hour = 8; hour <= 17; hour += 1) {
       appointmentsInDay20.push(
         fakeAppointmentsRepository.create({
