@@ -19,7 +19,7 @@ describe('ListProviderMonthAvailability', () => {
     for (let hour = 8; hour <= 17; hour += 1) {
       appointmentsInDay20.push(
         fakeAppointmentsRepository.create({
-          provider_id: 'user',
+          provider_id: 'provider',
           user_id: 'user',
           date: new Date(2020, 4, 20, hour, 0, 0),
         }),
@@ -29,18 +29,18 @@ describe('ListProviderMonthAvailability', () => {
     await Promise.all(appointmentsInDay20);
 
     await fakeAppointmentsRepository.create({
-      provider_id: 'user',
+      provider_id: 'provider',
       user_id: 'user',
       date: new Date(2020, 3, 20, 8, 0, 0),
     });
     await fakeAppointmentsRepository.create({
-      provider_id: 'user',
+      provider_id: 'provider',
       user_id: 'user',
       date: new Date(2020, 4, 21, 8, 0, 0),
     });
 
     const availability = await listProviderMonthAvailability.execute({
-      provider_id: 'user',
+      provider_id: 'provider',
       year: 2020,
       month: 5,
     });
